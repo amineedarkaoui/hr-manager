@@ -1,0 +1,31 @@
+employee_id,first_name,last_name,salary,employment_type,job_title,email,password,department_name,day,time_per_day,feedback_id,feedback_text,sentiment
+1,Ahmed,El Mansouri,12000.0,Full-Time,HR Manager,ahmed.mansouri@example.com,password123,HR,2024-12-20,8.0,1.0,That was good I can't lie,POSITIVE
+1,Ahmed,El Mansouri,12000.0,Full-Time,HR Manager,ahmed.mansouri@example.com,password123,HR,2024-12-20,8.0e,2.0,all good,POSITIVE
+1,Ahmed,El Mansouri,12000.0,Full-Time,HR Manager,ahmed.mansouri@example.com,password123,HR,2024-12-20,8.0,3.0,I don't like them tbh,NEGATIVE
+1,Ahmed,El Mansouri,12000.0,Full-Time,HR Manager,ahmed.mansouri@example.com,password123,HR,2024-12-21,7.5,1.0,That was good I can't lie,POSITIVE
+1,Ahmed,El Mansouri,12000.0,Full-Time,HR Manager,ahmed.mansouri@example.com,password123,HR,2024-12-21,7.5,2.0,all good,POSITIVE
+1,Ahmed,El Mansouri,12000.0,Full-Time,HR Manager,ahmed.mansouri@example.com,password123,HR,2024-12-21,7.5,3.0,I don't like them tbh,NEGATIVE
+2,Fatima,Benali,15000.0,Full-Time,Financial Analyst,fatima.benali@example.com,securepass,Finance,2024-12-20,8.0,,,
+3,Omar,Boukhari,10000.0,Part-Time,IT Technician,omar.boukhari@example.com,it123,IT,2024-12-20,4.0,,,
+4,Amina,Ouazzani,13000.0,Full-Time,Marketing Specialist,amina.ouazzani@example.com,marketing321,Marketing,2024-12-20,8.0,4.0,This is my feedback,POSITIVE
+4,Amina,Ouazzani,13000.0,Full-Time,Marketing Specialist,amina.ouazzani@example.com,marketing321,Marketing,2024-12-20,8.0,5.0,Hello this is good,POSITIVE
+4,Amina,Ouazzani,13000.0,Full-Time,Marketing Specialist,amina.ouazzani@example.com,marketing321,Marketing,2024-12-20,8.0,6.0,I hate them,NEGATIVE
+5,Youssef,Kettani,17000.0,Full-Time,IT Manager,youssef.kettani@example.com,adminpass,IT,2024-12-20,9.0,,,
+6,Karim,Tahiri,14000.0,Full-Time,Legal Advisor,karim.tahiri@example.com,legal123,Legal,2024-12-20,8.0,,,
+6,Karim,Tahiri,14000.0,Full-Time,Legal Advisor,karim.tahiri@example.com,legal123,Legal,2024-12-21,7.0,,,
+7,Hanae,Fazazi,12500.0,Full-Time,Sales Representative,hanae.fazazi@example.com,salespass,Sales,2024-12-20,8.5,,,
+8,Nadia,Jamal,16000.0,Full-Time,Operations Manager,nadia.jamal@example.com,operations321,Operations,2024-12-20,9.0,,,
+9,Mohamed,El Idrissi,11000.0,Part-Time,Customer Support Agent,mohamed.idrissi@example.com,support987,Customer Support,2024-12-20,6.0,,,
+10,Rachid,Oulad Ali,14500.0,Full-Time,Operations Analyst,rachid.oulaidali@example.com,ops456,Operations,2024-12-20,8.0,,,
+11,Leila,Abouzeid,13500.0,Full-Time,HR Specialist,leila.abouzeid@example.com,hr987,HR,2024-12-20,7.5,,,
+12,Imane,Maarouf,17500.0,Full-Time,Marketing Manager,imane.maarouf@example.com,marketing123,Marketing,2024-12-20,8.0,,,
+13,Yassine,Belghazi,10000.0,Part-Time,IT Support,yassine.belghazi@example.com,it456,IT,2024-12-20,4.0,,,
+22,Zineb,Amrani,12000.0,Full-Time,Logistics Coordinator,zineb.amrani@example.com,logistics123,Marketing,2024-12-21,8.0,,,
+22,Zineb,Amrani,12000.0,Full-Time,Logistics Coordinator,zineb.amrani@example.com,logistics123,Marketing,2024-12-22,7.5,,,
+23,Omar,Benjelloun,15000.0,Full-Time,Procurement Officer,omar.benjelloun@example.com,procure321,Public Relations,2024-12-21,6.0,,,
+24,Fatima,Azzouzi,18000.0,Full-Time,Finance Analyst,fatima.azzouzi@example.com,finance789,Human Resources,2024-12-21,8.0,,,
+25,Rania,Kabbaj,9500.0,Part-Time,Training Assistant,rania.kabbaj@example.com,train456,Customer Service,2024-12-21,7.5,,,
+26,Mehdi,Souissi,20000.0,Full-Time,Quality Manager,mehdi.souissi@example.com,quality123,Legal,2024-12-21,9.0,,,
+27,Ayoub,Berrada,13000.0,Full-Time,IT Specialist,ayoub.berrada@example.com,itspec678,Operations,2024-12-21,8.0,,,
+28,Samira,Hannouni,14000.0,Full-Time,Public Relations Specialist,samira.hannouni@example.com,pr456,Finance,2024-12-21,7.0,,,
+29,Hicham,Toumi,17000.0,Full-Time,Business Analyst,hicham.toumi@example.com,bizana789,Data Management,2024-12-21,4.5,,,

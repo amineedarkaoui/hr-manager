@@ -3,6 +3,7 @@ from auth.auth import authenticate
 from DB.database import store_feedback
 from Modele.sentiment_analysis_model import modele
 from reports.email import send_feedback_email
+from dashboard.dashboard import salary_by_departement,feedback_pie_chart
 
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
@@ -45,10 +46,11 @@ def feedback_page():
         st.session_state.page = "dashboard"
 
 def dashboard_page():
-    st.title("Dashboard")
-    st.write("Welcome to the dashboard")
-    st.write("This is a dashboard")
-    if st.button("back to login"):
+    st.title("Data visualization")
+    feedback_pie_chart()
+    salary_by_departement()
+    if st.button("Go back to login"):
+        st.session_state.logged_in = False
         st.session_state.page = "login"
 
 if st.session_state.page == "dashboard":

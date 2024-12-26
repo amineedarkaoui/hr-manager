@@ -1,9 +1,8 @@
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-import markdown
 
-to_email = "amine.edarkaoui03@gmail.com"
+to_email = "samy82696@gmail.com"
 smtp_server = 'smtp.gmail.com'
 smtp_port = 465
 login = 'amineed98@gmail.com'
@@ -24,25 +23,39 @@ def send_feedback_email(user, answer1, answer2, answer3, sentiment1, sentiment2,
         <html>
             <head></head>
             <body>
-                <p><b>Employee:</b> {user[1]} {user[2]}</p>
-                <p><b>Email:</b> {user[6]}</p>
-                <h3>What do you think about the company's work environment?</h3>
-                <p><b>Feedback 1:</b> {answer1}</p>
-                <span style="color:{sentiment_color(sentiment1)};"><i>{sentiment1}</i></span>
-                </br>
-                <h3>What do you think about your salary?</h3>
-                <p><b>Feedback 2:</b> {answer2}</p>
-                <span style="color:{sentiment_color(sentiment2)};"><i>{sentiment2}</i></span>
-                </br>
-                <h3>What do you think about your managers?</h3>
-                <p><b>Feedback 3:</b> {answer3}</p>
-                <span style="color:{sentiment_color(sentiment3)};"><i>{sentiment3}</i></span>
-            </body>
-        </html>
-    """
+                <h1>{user[1]} {user[2]}'s feedback</h1>
+                <div style="background-color: #f0f0f0; padding: 10px; margin-top: 20px;">
+                    <h3>What do you think about the company's work environment?</h3>
+                    <p>{answer1}</p>
+                    <span style="color:{sentiment_color(sentiment1)};"><i>{sentiment1}</i></span>
+                </div>
 
-    msg.attach(MIMEText(markdown.markdown(body), 'html'))
-    msg.attach(MIMEText(body, 'plain'))
+                </br>
+
+                <div style="background-color: #f0f0f0; padding: 10px; margin-top: 20px;">
+                    <h3>What do you think about your salary?</h3>
+                    <p>{answer2}</p>
+                    <span style="color:{sentiment_color(sentiment2)};"><i>{sentiment2}</i></span>
+                </div>
+
+                </br>
+
+                <div style="background-color: #f0f0f0; padding: 10px; margin-top: 20px;">
+                    <h3>What do you think about your managers?</h3>
+                    <p>{answer3}</p>
+                    <span style="color:{sentiment_color(sentiment3)};"><i>{sentiment3}</i></span>
+                </div>
+
+                <br>
+                <br>
+
+                <p>{user[1]} {user[2]}</p>
+                <p>{user[6]}</p>
+            </body>
+        </html>
+    """
+
+    msg.attach(MIMEText(body, 'html'))
 
     # Create server object with SSL option
     server = smtplib.SMTP_SSL(smtp_server, smtp_port)
