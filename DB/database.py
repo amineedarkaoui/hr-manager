@@ -5,10 +5,9 @@ def connectDB():
 	cur = con.cursor()
 	return cur, con
 
-def get_emails():
+def get_user(email):
 	cur, con = connectDB()
-	cur.execute("SELECT email FROM Employee")
-	emails = cur.fetchall()
+	user = cur.execute("SELECT * FROM Employee where email = ?", (email,)).fetchone()
 	con.close()
-	return [email[0] for email in emails]
+	return user
 
