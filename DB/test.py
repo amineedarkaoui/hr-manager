@@ -2,7 +2,7 @@ import database
 
 def select_all_feedback():
     cur, con = database.connectDB()
-    cur.execute("SELECT * FROM Employee")
+    cur.execute("SELECT * FROM Attendance")
     Employee = cur.fetchall()
     con.close()
     return Employee
