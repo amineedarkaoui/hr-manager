@@ -1,11 +1,12 @@
 from DB.database import get_user
 
 def authenticate(email, password):
-	if get_user(email):
-		if (get_user(email)[7] == password):
-			return True
+	user = get_user(email)
+	if user:
+		if (user[7] == password):
+			return True , user[0]
 		else:
-			return ("Incorrect Password")
+			return ("Incorrect Password"), None
 	else:
-		return ("User not found")
+		return ("User not found"), None
 
