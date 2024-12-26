@@ -7,7 +7,18 @@ def select_all_feedback():
     con.close()
     return Employee
 
-# Example usage
+def show_tables():
+    cur, con = database.connectDB()
+    cur.execute("SELECT name FROM sqlite_master WHERE type='table';")
+    tables = cur.fetchall()
+    con.close()
+    return [table[0] for table in tables]
+
+#exemple usage : 
+tables = show_tables()
+print("tables in the databese : ",tables)
+
+
 Employee_records = select_all_feedback()
 
 print("all feedbacks reocords : ")
