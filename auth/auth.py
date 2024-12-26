@@ -4,7 +4,7 @@ def authenticate(email, password):
 	user = get_user(email)
 	if user:
 		if (user[7] == password):
-			return True , user[0]
+			return True , user
 		else:
 			return ("Incorrect Password"), None
 	else:

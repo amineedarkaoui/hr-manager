@@ -1,3 +1,6 @@
-from DB.database import get_user
+from DB.database import get_user, print_all_feedbacks, get_all_users
 
-print(get_user("ahmed.mansouri@example.com")[7])
+print_all_feedbacks()
+
+# for user in get_all_users():
+#     print(user)

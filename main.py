@@ -1,8 +1,13 @@
 import streamlit as st
 from auth.auth import authenticate
+from DB.database import store_feedback
+from Modele.sentiment_analysis_model import modele
+from reports.email import send_feedback_email
 
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
+if "page" not in st.session_state:
+    st.session_state.page = "login"
 
 def login():
     st.title("Login")
@@ -10,39 +15,45 @@ def login():
         email = st.text_input("email")
         password = st.text_input("password", type="password")
         if st.form_submit_button("login"):
-            out, id = authenticate(email, password)
+            out, user = authenticate(email, password)
             if out is True:
                 st.success("Login Successful")
-                st.session_state.userId = id
+                st.session_state.user = user
                 st.session_state.logged_in = True
             else:
                 st.error(out)
 
-if st.session_state.logged_in:
+    st.write("or")
+    if st.button("Go to dashboard"):
+        st.session_state.page = "dashboard"
+
+def feedback_page():
+    if st.button("Logout"):
+        st.session_state.logged_in = False
+        st.session_state.page = "login"
     st.title("Feedback Page")
-    st.write("What do you think about the company's work environment?")
-    answer1 = st.text_input("Your answer", key="answer1")
-
-    st.write("What do you think about your salary?")
-    answer2 = st.text_input("Your answer", key="answer2")
-
-    st.write("What do you think about your managers?")
-    answer3 = st.text_input("Your answer", key="answer3")
-
+    answer1 = st.text_input("What do you think about the company's work environment?", key="answer1")
+    answer2 = st.text_input("What do you think about your salary?", key="answer2")
+    answer3 = st.text_input("What do you think about your managers?", key="answer3")
     if st.button("Submit"):
-        st.write("answer1:", answer1, "answer2:", answer2, "answer3:", answer3)
+        sentiment1, sentiment2, sentiment3 = modele(answer1)[0]['label'], modele(answer2)[0]['label'], modele(answer3)[0]['label']
+        store_feedback(st.session_state.user[0], answer1, answer2, answer3, sentiment1, sentiment2, sentiment3)
+        send_feedback_email(st.session_state.user, answer1, answer2, answer3, sentiment1, sentiment2, sentiment3)
+        st.success("Feedback submitted successfully")
+
+    if st.button("Go to dashboard"):
+        st.session_state.page = "dashboard"
+
+def dashboard_page():
+    st.title("Dashboard")
+    st.write("Welcome to the dashboard")
+    st.write("This is a dashboard")
+    if st.button("back to login"):
+        st.session_state.page = "login"
+
+if st.session_state.page == "dashboard":
+    dashboard_page()
+elif st.session_state.logged_in:
+    feedback_page()
 else:
     login()
-# # Initialize the page state in Session State
-# if "current_page" not in st.session_state:
-#     st.session_state.current_page = "login"  # Default page
-
-# # Navigation Function
-# def navigate_to(page_name):
-#     st.session_state.current_page = page_name
-
-# # Navigation Logic
-# if st.session_state.current_page == "login":
-#     login_page(navigate_to)
-# elif st.session_state.current_page == "feedback":
-#     feedback_page(navigate_to)
