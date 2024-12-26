@@ -1,5 +1,6 @@
 import sqlite3
 
+
 def connectDB():
 	con = sqlite3.connect("database.db")
 	cur = con.cursor()
@@ -11,4 +12,5 @@ def get_emails():
 	emails = cur.fetchall()
 	con.close()
 	return [email[0] for email in emails]
+
 
